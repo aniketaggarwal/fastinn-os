@@ -1,0 +1,217 @@
+.signup-container {
+    min-height: 100vh;
+    width: 100%;
+    /* Blue Theme Overlay + Background */
+    background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(37, 99, 235, 0.7)), url('/city-life.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.signup-card {
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    /* Slightly wider for the pop-up feel */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header */
+.signup-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center title */
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.back-button {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.signup-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Form Elements (Reused Logic) */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    margin-left: 2px;
+}
+
+.slick-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+    color: #0f172a;
+    outline: none;
+}
+
+.slick-input:focus {
+    border-color: #4f46e5;
+    /* Blue Focus */
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.slick-input::placeholder {
+    color: #cbd5e1;
+}
+
+/* Buttons */
+.signup-button {
+    width: 100%;
+    padding: 14px;
+    background: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.signup-button:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+/* Divider */
+.divider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.divider-text {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* Google Button */
+.google-button {
+    width: 100%;
+    padding: 14px;
+    background: #ffffff;
+    color: #1e293b;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* OTP Verification Styles */
+.otp-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.otp-box {
+    width: 48px;
+    height: 56px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.otp-box:focus {
+    border-color: #4f46e5;
+    background: #ffffff;
+    box-shadow: 0 0 12px rgba(79, 70, 229, 0.3);
+    /* Blue Glow */
+    transform: translateY(-2px);
+}
+
+.verify-button {
+    width: 100%;
+    padding: 14px;
+    background: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.verify-button:hover {
+    background: #1e293b;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}

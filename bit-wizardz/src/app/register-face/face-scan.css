@@ -1,0 +1,163 @@
+/* Face Scan Page - Matching Upload Aadhaar Style */
+
+.face-scan-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url('/background-webcam.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.face-scan-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.face-scan-card {
+    background: white;
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    width: 90%;
+    position: relative;
+    z-index: 10;
+}
+
+.face-scan-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.face-scan-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    flex: 1;
+}
+
+.face-scan-instruction {
+    text-align: center;
+    font-size: 1.125rem;
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button:hover {
+    background-color: #f1f5f9;
+}
+
+.scanner-wrapper {
+    margin: 2rem 0;
+}
+
+.registration-input {
+    background: #eff6ff;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid #bfdbfe;
+    margin-top: 1.5rem;
+}
+
+.registration-input input {
+    width: 100%;
+    background: white;
+    border: 2px solid #93c5fd;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.registration-input input:focus {
+    border-color: #2563eb;
+}
+
+.registration-input input::placeholder {
+    color: #94a3b8;
+}
+
+.result-box {
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.result-box.success {
+    background: #dcfce7;
+    color: #15803d;
+    border: 2px solid #86efac;
+}
+
+.result-box.error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 2px solid #fca5a5;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 0.875rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 2px solid #fecaca;
+}
+
+.btn-secondary:hover {
+    background: #fee2e2;
+}

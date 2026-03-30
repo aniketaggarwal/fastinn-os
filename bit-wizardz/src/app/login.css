@@ -1,0 +1,709 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+/* ════════════════════════════════════════════════════════
+   FastInn Login — Elegant Refinement
+   Keep city background, elevate form card + branding
+════════════════════════════════════════════════════════ */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+/* ── Left: city panel ── */
+.split-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(160deg,
+            rgba(10, 20, 60, 0.75) 0%,
+            rgba(17, 43, 120, 0.65) 50%,
+            rgba(5, 12, 40, 0.80) 100%),
+        url('/city-life.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    /* Subtle right-edge vignette */
+    box-shadow: 8px 0 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Horizontal glow line at bottom of panel */
+.split-left::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(99, 179, 237, 0.6) 40%, rgba(147, 210, 255, 0.8) 60%, transparent);
+    pointer-events: none;
+}
+
+/* ── Right: form panel ── */
+.split-right {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4f8;
+    padding: 48px 40px;
+    position: relative;
+}
+
+/* Very subtle grid texture on right panel */
+.split-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+}
+
+/* ── Content wrappers ── */
+.branding-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.8),
+        0 8px 12px -2px rgba(15, 23, 42, 0.06),
+        0 24px 48px -4px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    position: relative;
+    z-index: 2;
+}
+
+/* Glow tint top edge of the form card */
+.form-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.4) 50%, transparent);
+    border-radius: 100%;
+}
+
+/* ── Logo placeholder ── */
+.logo-placeholder {
+    width: 76px;
+    height: 76px;
+    background: linear-gradient(135deg, #1d4ed8, #4338ca);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* ── Brand name ── */
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.25rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #ffffff;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), 0 0 60px rgba(99, 179, 237, 0.25);
+    line-height: 1;
+}
+
+.brand-tagline {
+    font-size: 0.9375rem;
+    color: rgba(226, 232, 240, 0.75);
+    margin-top: -6px;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Feature list on left panel */
+.brand-features {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.brand-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.brand-feature-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(99, 179, 237, 0.9);
+    flex-shrink: 0;
+    box-shadow: 0 0 6px rgba(99, 179, 237, 0.7);
+}
+
+/* Status badge bottom of left panel */
+.brand-status {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.brand-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34d399;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* ── Form Typography ── */
+.form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 2px;
+    letter-spacing: -0.02em;
+}
+
+.form-subtitle {
+    color: #64748b;
+    font-size: 0.9375rem;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+/* ── Input group ── */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-left: 2px;
+}
+
+.slick-input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.9375rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    background: #f8fafc;
+    color: #0f172a;
+    outline: none;
+}
+
+.slick-input:focus {
+    border-color: #3b82f6;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.slick-input::placeholder {
+    color: #94a3b8;
+}
+
+/* ── Primary login button ── */
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 4px;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
+}
+
+.login-button:hover {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+/* ── Google button ── */
+.google-button {
+    width: 100%;
+    padding: 13px;
+    background: #ffffff;
+    color: #1e293b;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.google-button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+}
+
+/* ── Divider ── */
+.form-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #94a3b8;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: -4px 0;
+}
+
+.form-divider::before,
+.form-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+/* ── Sign-up link ── */
+.signup-text {
+    margin-top: 8px;
+    font-size: 0.875rem;
+    color: #64748b;
+    text-align: center;
+}
+
+.signup-link {
+    color: #2563eb;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.signup-link:hover {
+    color: #1d4ed8;
+}
+
+/* ── Admin link ── */
+.admin-link {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    padding: 4px;
+    transition: color 0.15s;
+    font-family: 'Inter', sans-serif;
+}
+
+.admin-link:hover {
+    color: #64748b;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .split-left {
+        min-height: 240px;
+        padding: 32px 20px;
+    }
+
+    .brand-name {
+        font-size: 2.25rem;
+    }
+
+    .split-right {
+        padding: 28px 20px;
+    }
+
+    .brand-status {
+        display: none;
+    }
+}
+
+/* ── Menu styles (header + tiles) ── */
+.top-header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(2, 8, 28, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: #e6eef8;
+}
+
+.header-brand {
+    font-family: 'Playfair Display', serif;
+    color: #7dd3fc;
+    font-size: 1.375rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-left: 8px;
+    letter-spacing: -0.01em;
+}
+
+.header-cta {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.15s;
+}
+
+.header-cta:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Profile avatar */
+.profile-avatar-wrapper {
+    position: relative;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1.5px solid rgba(125, 211, 252, 0.6);
+    box-shadow: 0 0 12px rgba(125, 211, 252, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    background: linear-gradient(135deg, rgba(29, 78, 216, 0.4), rgba(67, 56, 202, 0.4));
+}
+
+.avatar-letter {
+    color: #e6eef8;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-popup {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background: rgba(4, 10, 30, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 6px;
+    border-radius: 12px;
+    min-width: 160px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-popup-item {
+    background: transparent;
+    border: none;
+    color: #e6eef8;
+    padding: 9px 12px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.1s;
+}
+
+.profile-popup-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-logout-inline {
+    color: #f87171;
+    font-weight: 700;
+}
+
+/* ── Menu tiles ── */
+.menu-button {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.menu-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.menu-button:hover::before {
+    opacity: 1;
+}
+
+.menu-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    pointer-events: none;
+    transition: box-shadow 200ms ease;
+    box-shadow: inset 0 0 0 0 rgba(125, 211, 252, 0);
+}
+
+.menu-button:hover::after {
+    box-shadow: inset 0 0 0 2.5px rgba(125, 211, 252, 0.85);
+}
+
+.menu-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ── Modal ── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 80;
+    backdrop-filter: blur(6px);
+}
+
+.modal-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    min-width: 380px;
+    max-width: 460px;
+    text-align: center;
+    box-shadow: 0 40px 80px rgba(2, 6, 23, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+.modal-card h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.modal-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 11px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    border: none;
+    min-width: 96px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.15s;
+}
+
+.modal-btn--yes {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.modal-btn--yes:hover {
+    background: #fecaca;
+}
+
+.modal-btn--no {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.modal-btn--no:hover {
+    background: #e2e8f0;
+}
+
+.modal-btn+.modal-btn {
+    margin-left: 0;
+}
+
+/* ── Sign-up / OTP misc ── */
+.otp-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+}
+
+.otp-box {
+    width: 48px;
+    height: 56px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    background: #f8fafc;
+    transition: all 0.15s;
+    outline: none;
+}
+
+.otp-box:focus {
+    border-color: #3b82f6;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    transform: translateY(-2px);
+}
+
+.verify-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.25);
+    font-family: 'Inter', sans-serif;
+}
+
+.verify-button:hover {
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ── Profile logout button ── */
+.profile-logout-button {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    width: 100%;
+    border: 1px solid #fee2e2;
+    background: #fff;
+    color: #dc2626;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.profile-logout-button:hover {
+    transform: translateY(-2px);
+    background: #fff5f5;
+}

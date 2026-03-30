@@ -1,0 +1,22 @@
+﻿src/app/menu/page.tsx(58,25): error TS2322: Type '(el: HTMLDivElement | null) => HTMLDivElement | null' is not assignable to type 'Ref<HTMLDivElement> | undefined'.
+  Type '(el: HTMLDivElement | null) => HTMLDivElement | null' is not assignable to type '(instance: HTMLDivElement | null) => void | (() => VoidOrUndefinedOnly)'.
+    Type 'HTMLDivElement | null' is not assignable to type 'void | (() => VoidOrUndefinedOnly)'.
+      Type 'null' is not assignable to type 'void | (() => VoidOrUndefinedOnly)'.
+src/app/page.tsx(147,7): error TS2353: Object literal may only specify known properties, and 'is_mobile' does not exist in type 'VerifyMobileOtpParams'.
+src/app/upload-aadhaar/page.tsx(85,17): error TS2353: Object literal may only specify known properties, and 'aadhaarLast4' does not exist in type '{ name: string; dob: string; last4: string; }'.
+src/app/upload-aadhaar/page.tsx(101,41): error TS2339: Property 'extracted' does not exist on type '{ success: boolean; foundKeywords: string[]; errors: string[]; }'.
+src/app/upload-aadhaar/page.tsx(103,47): error TS2339: Property 'extracted' does not exist on type '{ success: boolean; foundKeywords: string[]; errors: string[]; }'.
+src/app/upload-aadhaar/page.tsx(113,45): error TS2339: Property 'extracted' does not exist on type '{ success: boolean; foundKeywords: string[]; errors: string[]; }'.
+src/app/upload-aadhaar/page.tsx(121,36): error TS2551: Property 'error' does not exist on type '{ success: boolean; foundKeywords: string[]; errors: string[]; }'. Did you mean 'errors'?
+src/lib/encryption.ts(90,9): error TS2345: Argument of type 'Uint8Array<ArrayBufferLike>' is not assignable to parameter of type 'BufferSource'.
+  Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'ArrayBufferView<ArrayBuffer>'.
+    Types of property 'buffer' are incompatible.
+      Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+        Type 'SharedArrayBuffer' is missing the following properties from type 'ArrayBuffer': resizable, resize, detached, transfer, transferToFixedLength
+src/lib/encryption.ts(101,32): error TS2322: Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'BufferSource'.
+  Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'ArrayBufferView<ArrayBuffer>'.
+    Types of property 'buffer' are incompatible.
+      Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+        Type 'SharedArrayBuffer' is missing the following properties from type 'ArrayBuffer': resizable, resize, detached, transfer, transferToFixedLength
+src/lib/encryption.ts(131,41): error TS2345: Argument of type 'ArrayBufferLike' is not assignable to parameter of type 'ArrayBuffer'.
+  Type 'SharedArrayBuffer' is missing the following properties from type 'ArrayBuffer': resizable, resize, detached, transfer, transferToFixedLength
